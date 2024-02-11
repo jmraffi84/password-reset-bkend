@@ -1,7 +1,7 @@
 // src/api/authApi.js
 import axios from 'axios';
 
-// const BASE_URL = 'http://localhost:8080'
+const BASE_URL = 'https://rad-gnome-237bf5.netlify.app'
 
 export const newUser = async (userData) => {
     try {
@@ -10,7 +10,7 @@ export const newUser = async (userData) => {
                 'Content-Type': 'application/json',
             },
         }
-        const response = await axios.post(`${process.env.BASE_URL}/signup`, userData, config);
+        const response = await axios.post(`${BASE_URL}/signup`, userData, config);
         return response
     } catch (error) {
         throw error;
@@ -24,7 +24,7 @@ export const forget_password = async (email) => {
                 'Content-Type': 'application/json',
             },
         }
-        const response = await axios.post(`${process.env.BASE_URL}/forget-password`, email, config);
+        const response = await axios.post(`${BASE_URL}/forget-password`, email, config);
         return response;
     } catch (error) {
         throw error;
@@ -41,7 +41,7 @@ export const reset_password = async ({ token, password }) => {
             },
         }
 
-        const response = await axios.post(`${process.env.BASE_URL}/reset-password/${token}`, { password }, config);
+        const response = await axios.post(`${BASE_URL}/reset-password/${token}`, { password }, config);
         return response;
     } catch (error) {
         throw error;
@@ -58,7 +58,7 @@ export const authenticate = async (email, password) => {
             },
         }
 
-        const response = await axios.post(`${process.env.BASE_URL}/authenticate`, { email, password }, config);
+        const response = await axios.post(`${BASE_URL}/authenticate`, { email, password }, config);
         return response.data;
     } catch (error) {
         throw error;
