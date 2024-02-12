@@ -1,7 +1,7 @@
 // src/api/authApi.js
 import axios from 'axios';
 
-const BASE_URL = 'https://rad-gnome-237bf5.netlify.app'
+const BASE_URL = 'https://password-reset-backend-yply.onrender.com'
 
 export const newUser = async (userData) => {
     try {
