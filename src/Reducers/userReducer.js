@@ -111,10 +111,11 @@ const passwordResetSlice = createSlice({
                 state.error = null;
                 state.success = false;
             })
-            .addCase(passwordResetAsync.fulfilled, (state) => {
+            .addCase(passwordResetAsync.fulfilled, (state, action) => {
                 state.loading = false;
                 state.error = null;
                 state.success = true;
+                state.data = action.payload;
             })
             .addCase(passwordResetAsync.rejected, (state, action) => {
                 state.loading = false;

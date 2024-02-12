@@ -31,7 +31,7 @@ const PasswordReset = () => {
             const response = await reset_password(newPasswordData);
             console.log("Response:", response);
             setSuccess("Password reset successful");
-            dispatch(changePassword(newPasswordData));
+            // dispatch(changePassword(newPasswordData));
             console.log("Test 2", response);
         } catch (error) {
             console.log(error);
