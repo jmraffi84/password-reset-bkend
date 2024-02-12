@@ -98,6 +98,7 @@ const passwordResetSlice = createSlice({
     },
     reducers: {
         changePassword: (state, action) => {
+            console.log("state:", state);
             state.data = action.payload
         },
 
